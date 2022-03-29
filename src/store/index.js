@@ -20,6 +20,9 @@ export default createStore({
       if(state.carrito[payload].cantidad == 0) {
         delete state.carrito[payload]
       }
+    },
+    cancelarOrden(state) {
+      state.carrito = {};
     }
   }, 
   actions: {
@@ -40,6 +43,13 @@ export default createStore({
     }
   },
   getters: {
+    // getters toman algo del state y pueden devolver un calculo sobre el
+    totalCantidad(state) {
+      return Object.values(state.carrito).reduce((acc, {cantidad}) => acc + cantidad, 0);
+    },
+    totalPrecio(state) {
+      return Object.values(state.carrito).reduce((acc, {cantidad, precio}) => acc + (cantidad * precio), 0);;
+    }
   },
   modules: {
   }

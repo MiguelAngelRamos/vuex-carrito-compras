@@ -22,7 +22,7 @@
 
       <tfoot>
         <tr>
-          <!-- <th>Carrito Vacio, Ningún producto seleccionado</th> -->
+          <th colspan="5" v-if="Object.keys(carrito).length ===0">Carrito Vacio, Ningún producto seleccionado</th>
           <FooterTotal />
         </tr>
       </tfoot>
