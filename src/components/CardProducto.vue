@@ -19,7 +19,7 @@ export default {
     const store = useStore();
 
     // methods
-    const agregar = producto => {
+    const agregar = (producto) => {
       store.dispatch('agregarAlCarrito', producto)
     };
 
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   img {
     width: 270px;
     height: 270px;

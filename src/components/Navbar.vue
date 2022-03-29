@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- fixed-top -->
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">VueMarket</a>
+      <router-link class="navbar-brand" to="/">VueMarket</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,11 +17,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
           </li>
         </ul>
+
         <!-- Icono del carrito de compra -->
-        <div class="carrito-container d-flex">
+        <router-link to="/carrito" class="carrito-container d-flex">
          <div class="carrito-icon">
            <!-- Icono de carrito -->
            <i class="fas fa-cart-plus"></i>
@@ -30,8 +32,9 @@
              {{ Object.keys(carrito).length }}
            </div>
          </div>
-        </div>
+        </router-link>
         <!-- Fin Icono del carrito de compra -->
+
       </div>
     </div>
   </nav>

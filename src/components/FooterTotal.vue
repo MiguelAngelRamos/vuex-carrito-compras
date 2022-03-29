@@ -1,5 +1,5 @@
 <template>
-  <h2>Soy footer</h2>
+  <h2>La suma de los totales</h2>
 </template>
 
 <script>

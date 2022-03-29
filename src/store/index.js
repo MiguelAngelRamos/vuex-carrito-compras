@@ -11,6 +11,15 @@ export default createStore({
     },
     setCarrito(state, payload) {
       state.carrito[payload.id] = payload;
+    },
+    aumentar(state, payload) {
+      state.carrito[payload].cantidad = state.carrito[payload].cantidad + 1;
+    },
+    disminuir(state, payload) {
+      state.carrito[payload].cantidad = state.carrito[payload].cantidad - 1;
+      if(state.carrito[payload].cantidad == 0) {
+        delete state.carrito[payload]
+      }
     }
   }, 
   actions: {
@@ -26,7 +35,7 @@ export default createStore({
     agregarAlCarrito({commit, state}, producto) {
       console.log('agregando al carrito');
       // El método hasOwnProperty() devuelve un booleano indicando si el objeto tiene la propiedad especificada.
-      state.carrito.hasOwnProperty(producto.id)? producto.cantidad = state.carrito[producto.id].cantidad+1:producto.cantidad = 1;
+      state.carrito.hasOwnProperty(producto.id) ? producto.cantidad = state.carrito[producto.id].cantidad+1 : producto.cantidad = 1;
       commit('setCarrito', producto);
     }
   },
