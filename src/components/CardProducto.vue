@@ -1,10 +1,10 @@
 <template>
-<div class="mt-2 card" style="width: 18rem;">
+<div class="mt-2 card" style="width: 19rem;">
   <img :src="productoCard.image" class="mt-2 card-img-top" alt="">
   <div class="card-body">
-    <h5 class="card-title">{{productoCard.title}}</h5>
-    <span class="text-center font-weight-bold">${{ Intl.NumberFormat().format(productoCard.precio) }}</span>
+    <h5 class="mt-1 card-title text-center">{{productoCard.title}}</h5>
   </div>
+  <span class="d-block text-center font-weight-bold mb-3">${{ Intl.NumberFormat().format(productoCard.precio) }}</span>
   <button class="btn btn-success mb-2" @click="agregar(productoCard)">Agregar al carrito</button>
 </div>
 </template>
@@ -33,8 +33,8 @@ export default {
 
 <style scoped>
   img {
-    width: 270px;
-    height: 270px;
+    width: 280px;
+    height: 260px;
   }
   button {
     background-color: #2E6E52 !important; 

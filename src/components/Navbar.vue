@@ -29,7 +29,7 @@
          </div>
          <div class="counter">
            <div class="counter-number">
-             {{ Object.keys(carrito).length }}
+             {{ Object.keys(carrito).length }} 
            </div>
          </div>
         </router-link>
